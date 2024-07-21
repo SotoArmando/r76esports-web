@@ -635,7 +635,7 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                     itemSpacing: 11,
                                     children: [
                                       {
-                                        59: LayoutText('LATEST R76VIDEOS',
+                                        59: LayoutText('LATEST R76 VIDEOS',
                                             style: GoogleFonts.teko(
                                                 fontWeight: FontWeight.w600,
                                                 color: Colors.white,
