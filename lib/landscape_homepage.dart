@@ -290,14 +290,14 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                                                                 Colors.white,
                                                                             child: OrientedLayout(
                                                                                 orientation: LayoutOrientation.horizontal,
-                                                                                primaryAxisAlignItems: LayoutAlign.center,
-                                                                                counterAxisAlignItems: LayoutAlign.center,
+                                                                                primaryAxisAlignItems: LayoutAlign.min,
+                                                                                counterAxisAlignItems: LayoutAlign.min,
                                                                                 diameter: 56,
                                                                                 padding: [0, 0, 0, 0],
                                                                                 itemSpacing: 10,
                                                                                 children: [
                                                                                   {
-                                                                                    240: LayoutText(productNames[e], idtext: 'e\ne',maxLines: 3, style: GoogleFonts.inter(height: 1.6746987951807228))
+                                                                                    370: LayoutText(productNames[e], idtext: 'e\ne',maxLines: 3, style: GoogleFonts.inter(height: 1.6746987951807228))
                                                                                   }
                                                                                 ]),
                                                                           )
@@ -524,8 +524,8 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                                                                 Colors.white,
                                                                             child: OrientedLayout(
                                                                                 orientation: LayoutOrientation.horizontal,
-                                                                                primaryAxisAlignItems: LayoutAlign.center,
-                                                                                counterAxisAlignItems: LayoutAlign.center,
+                                                                                primaryAxisAlignItems: LayoutAlign.min,
+                                                                                counterAxisAlignItems: LayoutAlign.min,
                                                                                 diameter: 56,
                                                                                 padding: [0, 0, 0, 0],
                                                                                 itemSpacing: 10,
