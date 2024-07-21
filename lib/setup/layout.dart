@@ -74,11 +74,12 @@ class ProportionsColumn extends StatefulWidget {
   final num defaultDiameter;
   final bool debug;
   final bool containerIsFamily;
-
+  final bool lazyLoad;
   const ProportionsColumn(
       {super.key,
       required this.defaultDiameter,
       this.padding = const [0, 0, 0, 0],
+      this.lazyLoad =false,
       required this.children,
       this.spacing = 0,
       this.containerIsFamily = false,
