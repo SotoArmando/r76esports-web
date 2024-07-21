@@ -84251,7 +84251,7 @@ $S:519}
 A.a9b.prototype={
 gk7(){return A.bY([B.am,B.aY],t.A)}}
 A.Ky.prototype={
-K(a){return new A.tb($.aDS(),"Flutter Demo",A.BX(null,A.aFN(B.V,B.HS),!0),new A.a9b(),null)}}
+K(a){return new A.tb($.aDS(),"Rainbow 76 - Website Concept",A.BX(null,A.aFN(B.V,B.HS),!0),new A.a9b(),null)}}
 A.pD.prototype={
 ai(){return new A.E7(B.l)}}
 A.E7.prototype={

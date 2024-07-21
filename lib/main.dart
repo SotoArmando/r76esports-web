@@ -61,7 +61,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: _router,
       scrollBehavior: MyCustomScrollBehavior(),
-      title: 'Flutter Demo',
+      title: 'Rainbow 76 - Website Concept',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
