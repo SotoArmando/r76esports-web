@@ -17,6 +17,21 @@ class R76 extends StatefulWidget {
 class _R76State extends State<R76> {
   bool hide = false;
   late ScrollController _scrollController;
+
+
+  @override
+  void initState() {
+    // initialize scroll controllers
+    _scrollController = ScrollController();
+
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
   void prepareForRoute() {
     setState(() {
       hide = true;
