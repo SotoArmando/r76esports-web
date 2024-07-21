@@ -19,8 +19,27 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
-
 class _HomeState extends State<Home> {
+  bool hide = false;
+
+  void prepareForRoute() {
+    setState(() {
+      hide = true;
+    });
+
+    Future.delayed(Duration(milliseconds: 1000), () {
+      setState(() {
+        hide = false;
+      });
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.sizeOf(context).width;
@@ -28,13 +47,18 @@ class _HomeState extends State<Home> {
       appBar: R76Appbar(
         width: width,
         preferredSize: Size.fromHeight(width * 0.04399789584429248),
+        prepareForRoute: prepareForRoute,
       ),
       body: OrientationBuilder(
         builder: (context, orientation) {
           if (orientation == Orientation.portrait) {
-            return Text('portrait');
+            return const Text('portrait');
           } else {
-            return LandscapeHomepage();
+            return hide
+                ? const ColoredBox(color: Colors.black)
+                : LandscapeHomepage(
+                    prepareForRoute: prepareForRoute,
+                  );
           }
         },
       ),

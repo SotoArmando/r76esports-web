@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sr_flutter/button/button0.dart';
@@ -6,15 +7,23 @@ import 'package:sr_flutter/setup/layout.dart';
 import 'package:sr_flutter/setup/layout_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class R76Appbar extends StatelessWidget implements PreferredSizeWidget {
+class R76Appbar extends StatefulWidget implements PreferredSizeWidget {
   @override
   final Size preferredSize;
-
+  final void Function() prepareForRoute;
   const R76Appbar(
-      {super.key, required this.width, required this.preferredSize});
+      {super.key,
+      required this.width,
+      required this.prepareForRoute,
+      required this.preferredSize});
 
   final double width;
 
+  @override
+  State<R76Appbar> createState() => _R76AppbarState();
+}
+
+class _R76AppbarState extends State<R76Appbar> {
   Future<void> _launchInBrowser(Uri url) async {
     if (!await launchUrl(
       url,
@@ -28,6 +37,20 @@ class R76Appbar extends StatelessWidget implements PreferredSizeWidget {
     if (!await launchUrl(url, mode: LaunchMode.inAppBrowserView)) {
       throw Exception('Could not launch $url');
     }
+  }
+
+  Future<bool> rebuild() async {
+    if (!mounted) return false;
+
+    // if there's a current frame,
+    if (SchedulerBinding.instance.schedulerPhase != SchedulerPhase.idle) {
+      // wait for the end of that frame.
+      await SchedulerBinding.instance.endOfFrame;
+      if (!mounted) return false;
+    }
+
+    setState(() {});
+    return true;
   }
 
   @override
@@ -67,16 +90,16 @@ class R76Appbar extends StatelessWidget implements PreferredSizeWidget {
                         itemSpacing: 31,
                         children: [
                           {
-                            492: MinDiameterSupport(
+                            600: MinDiameterSupport(
                                 diameter: 24,
-                                length: 492,
+                                length: 600,
                                 maximumDiameter: 24.610000610351562,
                                 orientation: LayoutOrientation.horizontal,
-                                primaryAxisAlignItems: LayoutAlign.min,
+                                primaryAxisAlignItems: LayoutAlign.max,
                                 counterAxisAlignItems: LayoutAlign.center,
                                 child: OrientedLayout(
                                     orientation: LayoutOrientation.horizontal,
-                                    primaryAxisAlignItems: LayoutAlign.min,
+                                    primaryAxisAlignItems: LayoutAlign.max,
                                     counterAxisAlignItems: LayoutAlign.center,
                                     diameter: 24,
                                     padding: [0, 1, 0, 1],
@@ -84,32 +107,43 @@ class R76Appbar extends StatelessWidget implements PreferredSizeWidget {
                                     itemSpacing: 25,
                                     children: [
                                       GestureDetector(
-                                          onTapUp: (_) => context.go('/'),
+                                          onTapUp: (_) async {
+                                            widget.prepareForRoute();
+                                            await Future.delayed(Duration(milliseconds: 25));
+                                            context.go('/');
+                                          },
                                           child: Button0(
                                             label: 'El Equipo',
                                           )),
                                       GestureDetector(
-                                        onTapUp: (_) =>
-                                            context.go('/comunidad'),
+                                        onTapUp: (_) async {
+                                          widget.prepareForRoute();
+                                          await Future.delayed(Duration(milliseconds: 25));
+                                          context.go('/comunidad');
+                                        },
                                         child: Button0(
                                           label: 'Comunidad',
                                         ),
                                       ),
                                       GestureDetector(
-                                        onTapUp: (_) =>
-                                            _launchInBrowser(Uri.parse('https://c7116c-dc.myshopify.com/')),
-                                        child:Button0(
-                                        label: 'Store',
-                                      )),
+                                          onTapUp: (_) => _launchInBrowser(
+                                              Uri.parse(
+                                                  'https://c7116c-dc.myshopify.com/')),
+                                          child: Button0(
+                                            label: 'Store',
+                                          )),
                                       Button0(
                                         label: 'Up next',
                                       ),
-                                       GestureDetector(
-                                        onTapUp: (_) =>
-                                            context.go('/R76'),
-                                        child:Button0(
-                                        label: 'R76',
-                                      )),
+                                      GestureDetector(
+                                          onTapUp: (_) async {
+                                            widget.prepareForRoute();
+                                            await Future.delayed(Duration(milliseconds: 25));
+                                            context.go('/R76');
+                                          },
+                                          child: Button0(
+                                            label: 'R76',
+                                          )),
                                       Button0(
                                         label: 'Sponsors',
                                       ),

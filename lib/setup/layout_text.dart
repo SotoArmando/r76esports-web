@@ -65,6 +65,8 @@ class LayoutText extends StatelessWidget {
   final bool removeLines;
   final List<TextSpan>? children;
   final int? maxLines;
+  final bool softWrap;
+  final double? postScale;
   // ex 0.5;
   final double? letterSpacing;
   double fontSize = 0;
@@ -73,6 +75,8 @@ class LayoutText extends StatelessWidget {
       required this.style,
       this.fontSize = 0,
       this.textAlign,
+      this.softWrap = false,
+      this.postScale,
       this.letterSpacing,
       this.postHeigth,
       this.idtext,
@@ -149,6 +153,8 @@ class LayoutText extends StatelessWidget {
               applyHeightToFirstAscent: false, applyHeightToLastDescent: false),
           textAlign: textAlign ?? TextAlign.start,
           overflow: TextOverflow.visible,
+          softWrap: softWrap,
+          
           maxLines: maxLines,
           text: TextSpan(
               text: removeLines ? (text.replaceAll("\n", " ")) : text,
@@ -171,7 +177,7 @@ class LayoutText extends StatelessWidget {
                       height: postHeigth,
                       color: textWidget.style!.color ?? Color(0xFF3C3939)),
               children: children),
-          textScaler: TextScaler.linear(scaleExceptions[idtext] ?? 1),
+          textScaler: TextScaler.linear(postScale ?? scaleExceptions[idtext] ?? 1),
         );
       },
     );

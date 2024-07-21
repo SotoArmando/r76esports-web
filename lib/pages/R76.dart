@@ -6,8 +6,26 @@ import 'package:sr_flutter/setup/layout.dart';
 import 'package:sr_flutter/setup/layout_text.dart';
 import 'package:sr_flutter/youtubeiframe.dart';
 
-class R76 extends StatelessWidget {
+class R76 extends StatefulWidget {
   const R76({super.key});
+
+  @override
+  State<R76> createState() => _R76State();
+}
+
+class _R76State extends State<R76> {
+  bool hide = false;
+
+  void prepareForRoute() {
+    setState(() {
+      hide = true;
+    });
+    Future.delayed(Duration(milliseconds: 1000), () {
+      setState(() {
+        hide = false;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +35,9 @@ class R76 extends StatelessWidget {
       appBar: R76Appbar(
         width: width,
         preferredSize: Size.fromHeight(width * 0.04399789584429248),
+        prepareForRoute: prepareForRoute,
       ),
-      body: OrientationBuilder(
+      body:hide? ColoredBox(color: Colors.black) : OrientationBuilder(
         builder: (context, orientation) {
           if (orientation == Orientation.portrait) {
             return Text('portrait');
@@ -116,6 +135,7 @@ class R76 extends StatelessWidget {
                                         {
                                           21.1200008392334: LayoutText(
                                               'Rooted in our legacy of raising trophies and inspired by our passion for victory.',
+                                              softWrap: true,
                                               style: GoogleFonts.inter(
                                                   height: 1.400933955970647,
                                                   color: Colors.white))
@@ -123,6 +143,7 @@ class R76 extends StatelessWidget {
                                         {
                                           29.979999542236328: LayoutText(
                                               'We are R76.',
+                                              softWrap: true,
                                               style: GoogleFonts.inter(
                                                   height: 1.7341040462427746,
                                                   color: Colors.white))
@@ -131,6 +152,7 @@ class R76 extends StatelessWidget {
                                           63.36000061035156: LayoutText(
                                               'T1 Entertainment & Sports is a global esports joint venture that owns and operates the ultra-successful T1 League of Legends (LoL) Champions Korea (LCK) team, along with teams in competitive \ngaming segments that include Dota 2, Super Smash Bros., Valorant, Wild Rift, Overwatch Contenders, Splitgate. Building upon the rich legacy of SKT T1, T1 will expand its teams globally, celebrate \nnew victories, and create even more opportunities for fans to embrace T1’s gaming culture, content, and players in every corner of the world.',
                                               idtext: 'e\ne\ne',
+                                              softWrap: true,
                                               style: GoogleFonts.inter(
                                                   height: 1.400933955970647,
                                                   color: Colors.white))
@@ -231,10 +253,12 @@ class R76 extends StatelessWidget {
                                                         height:
                                                             1.3826998689384011,
                                                         color: Colors.white),
+                                                        softWrap: true,
                                                     children: [
                                                       TextSpan(
                                                         text:
                                                             ' - CEO\nJoe Marsh is CEO of T1 Entertainment & Sports, a global esports joint venture created by Comcast \nSpectacor and SK Telecom in October 2019. He oversees operations based in Seoul, Philadelphia, \nLos Angeles and is responsible for the growth and optimization of T1’s global presence and expansion \ninto new businesses and revenue streams surrounding competitive gaming culture and lifestyle, \ncontent, and merchandise.',
+                                                        
                                                         style: GoogleFonts.inter(
                                                         fontWeight:
                                                             FontWeight.w400,
@@ -261,6 +285,7 @@ class R76 extends StatelessWidget {
                                                       child: LayoutText(
                                                           'Joe previously served as Chief Business Officer of Comcast’s Spectacor Gaming division and the \nPhiladelphia Fusion esports franchise that competes in the Overwatch League. ',
                                                           idtext: 'e\ne',
+                                                          softWrap: true,
                                                           style: GoogleFonts.inter(
                                                               height:
                                                                   1.3826998689384011,
@@ -271,6 +296,7 @@ class R76 extends StatelessWidget {
                                                   211.1999969482422: LayoutText(
                                                       'Joe was named Vice President and Chief Financial Officer of the Fusion in 2018, providing direct \noversight of financials for the team, including budgeting, forecasting, and long-range planning. Prior to  joining Spectacor Gaming and the Philadelphia Fusion, Joe held several finance positions at Comcast  Spectacor, where he was responsible for the development, coordination, consolidation and \ncommunication of the company\'s annual budgeting, long-range planning and forecasting functions \nfor Comcast Spectacor’s core businesses. Joe graduated with a degree in Marketing from Millersville \nUniversity and later earned his MBA in Finance, Analytics and Strategic Management from Villanova \nUniversity. Marsh currently serves as a strategic advisor to Spectacor Gaming, G4tv and the \nPhiladelphia Fusion. Joe previously served as a board member of Nerd Street Gamers. Joe lives in the \nPhiladelphia area with his wife Kelly and daughters Caden and Colbie.',
                                                       idtext: 'e\n' * 9,
+                                                      softWrap: true,
                                                       style: GoogleFonts.inter(
                                                           height:
                                                               1.3826998689384011,
@@ -283,10 +309,30 @@ class R76 extends StatelessWidget {
                           ])
                     },
                     {
-                      99.5199966430664: ColoredBox(
-                        color: Color(0xFFD72A47),
-                      )
-                    },
+                    99.5199966430664: DecoratedBox(
+                      decoration: BoxDecoration(color: Color(0xFFD72A47)),
+                      child: ProportionsRow(
+                        defaultDiameter: 99.51,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // color: Color(0xFFD72A47),
+                        children: [
+                          {
+                            1284: MinDiameterSupport(
+                              orientation: LayoutOrientation.horizontal,
+                              primaryAxisAlignItems: LayoutAlign.center,
+                              counterAxisAlignItems: LayoutAlign.center,
+                              maximumDiameter: 99.51,
+                              diameter: 86.08,
+                              length: 1284,
+                              child: Center(
+                                child: Image.asset('assets/R76/opgg.png'),
+                              ),
+                            )
+                          }
+                        ],
+                      ),
+                    )
+                  },
                     {
                       301.2: ColoredBox(
                           color: Color(0xFF000000),

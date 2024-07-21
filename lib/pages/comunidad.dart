@@ -6,8 +6,26 @@ import 'package:sr_flutter/setup/layout.dart';
 import 'package:sr_flutter/setup/layout_text.dart';
 import 'package:sr_flutter/youtubeiframe.dart';
 
-class Comunidad extends StatelessWidget {
+class Comunidad extends StatefulWidget {
   const Comunidad({super.key});
+
+  @override
+  State<Comunidad> createState() => _ComunidadState();
+}
+
+class _ComunidadState extends State<Comunidad> {
+ bool hide = false;
+
+  void prepareForRoute() {
+    setState(() {
+      hide = true;
+    });
+    Future.delayed(Duration(milliseconds: 1000), () {
+      setState(() {
+        hide = false;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +35,9 @@ class Comunidad extends StatelessWidget {
       appBar: R76Appbar(
         width: width,
         preferredSize: Size.fromHeight(width * 0.04399789584429248),
+        prepareForRoute: prepareForRoute,
       ),
-      body: OrientationBuilder(
+      body: hide? ColoredBox(color: Colors.black) : OrientationBuilder(
         builder: (context, orientation) {
           if (orientation == Orientation.portrait) {
             return Text('portrait');
@@ -108,11 +127,31 @@ class Comunidad extends StatelessWidget {
                             }
                           ])
                     },
-                    {
-                      99.5199966430664: ColoredBox(
-                        color: Color(0xFFD72A47),
-                      )
-                    },
+                  {
+                    99.5199966430664: DecoratedBox(
+                      decoration: BoxDecoration(color: Color(0xFFD72A47)),
+                      child: ProportionsRow(
+                        defaultDiameter: 99.51,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // color: Color(0xFFD72A47),
+                        children: [
+                          {
+                            1284: MinDiameterSupport(
+                              orientation: LayoutOrientation.horizontal,
+                              primaryAxisAlignItems: LayoutAlign.center,
+                              counterAxisAlignItems: LayoutAlign.center,
+                              maximumDiameter: 99.51,
+                              diameter: 86.08,
+                              length: 1284,
+                              child: Center(
+                                child: Image.asset('assets/R76/opgg.png'),
+                              ),
+                            )
+                          }
+                        ],
+                      ),
+                    )
+                  },
                     {
                       301.2: ColoredBox(
                           color: Color(0xFF000000),
