@@ -798,8 +798,26 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                             ]))
                   },
                   {
-                    99.5199966430664: ColoredBox(
-                      color: Color(0xFFD72A47),
+                    99.5199966430664: DecoratedBox(
+                      decoration: BoxDecoration(color: Color(0xFFD72A47)),
+                      child: ProportionsRow(
+                        defaultDiameter: 99.51,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // color: Color(0xFFD72A47),
+                        children: [
+                          {
+                            1284: MinDiameterSupport(
+                              orientation: LayoutOrientation.horizontal,
+                              primaryAxisAlignItems: LayoutAlign.center,
+                              counterAxisAlignItems: LayoutAlign.center,
+                              maximumDiameter: 99.51,
+                              diameter: 86.08,
+                              length: 1284,
+                              child: Center(child: Image.asset('assets/R76/opgg.png'),),
+                            )
+                          }
+                        ],
+                      ),
                     )
                   },
                   {
@@ -1172,7 +1190,9 @@ class _LandingState extends State<Landing> {
               },
             ],
           ),
-          ProportionsRow(defaultDiameter: 882, padding: [
+          ProportionsRow(
+            length: 1901,
+            defaultDiameter: 882, padding: [
             38,
             0,
             0,
