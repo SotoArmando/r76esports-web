@@ -153,7 +153,7 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                           },
                                           {
                                             80.62999725341797: LayoutText(
-                                              'SR',
+                                              'R76',
                                               textAlign: TextAlign.center,
                                               style: GoogleFonts.teko(
                                                   fontWeight: FontWeight.w600,
@@ -371,7 +371,7 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                           },
                                           {
                                             80.62999725341797: LayoutText(
-                                              'R76NA',
+                                              'R76 NA',
                                               textAlign: TextAlign.center,
                                               style: GoogleFonts.teko(
                                                   fontWeight: FontWeight.w600,
