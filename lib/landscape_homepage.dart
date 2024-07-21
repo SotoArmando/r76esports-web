@@ -13,6 +13,18 @@ import 'package:url_launcher/url_launcher.dart';
 Random random = new Random();
 
 class _LandscapeHomepageState extends State<LandscapeHomepage> {
+  List<String> productNames = [
+    "Funny League Shirt",
+    "League Players Top Diff Legends",
+    "Funny League Shirt",
+    "Tenis Rush Pro 4.0 Clay",
+    "Air Athletic - Tenis para mujer de moda, para el gimnasio",
+    "Tenis de correr fáciles de colocar transpirables, ",
+    "League of Legends - Correa de reloj inteligente con licencia oficial,",
+    "Camiseta con texto en inglés «Cute Tongue League», Negro, S ",
+    "Funny Eat Sleep League Repeat Gift",
+    "Tenis Rush Pro 4.0 para hombre"
+  ];
   Future<void> _launchInBrowser(Uri url) async {
     if (!await launchUrl(
       url,
@@ -223,9 +235,9 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                       diameter: 728,
                                       padding: [0, 0, 0, 0],
                                       itemSpacing: 10,
-                                      children: List.filled(
+                                      children: List.generate(
                                         10,
-                                        {
+                                        (e) => {
                                           476.0199890136719: OrientedLayout(
                                               orientation:
                                                   LayoutOrientation.vertical,
@@ -249,7 +261,7 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                                               decoration: BoxDecoration(
                                                                   image: DecorationImage(
                                                                       image: AssetImage(
-                                                                          'assets/sr/Product #0.png'))),
+                                                                          'assets/R76/product #${e + 1}.jpg'))),
                                                               child:
                                                                   OrientedLayout(
                                                                       orientation:
@@ -285,7 +297,7 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                                                                 itemSpacing: 10,
                                                                                 children: [
                                                                                   {
-                                                                                    240: LayoutText('Victrix Pro BFG Wireless Controller', idtext: 'e\ne', style: TextStyle())
+                                                                                    240: LayoutText(productNames[e], idtext: 'e\ne',maxLines: 3, style: GoogleFonts.inter(height: 1.6746987951807228))
                                                                                   }
                                                                                 ]),
                                                                           )
@@ -312,7 +324,7 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                                               LayoutOrientation
                                                                   .vertical,
                                                           length: 26.34,
-                                                          diameter: 91.47,
+                                                          diameter: 190.14,
                                                           maximumDiameter:
                                                               476.0,
                                                           primaryAxisAlignItems:
@@ -327,7 +339,7 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                                                       color: Color(
                                                                           0xFFD72A47)),
                                                               child: LayoutText(
-                                                                  'Buy Now',
+                                                                  'Agregar al Carrito',
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -345,7 +357,7 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                                 }
                                               ])
                                         },
-                                      )),
+                                      ).reversed.toList()),
                                 ]),
                           )
                         ])
@@ -457,32 +469,33 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                       diameter: 728,
                                       padding: [0, 0, 0, 0],
                                       itemSpacing: 10,
-                                      children: List.filled(
+                                      children: List.generate(
                                         10,
-                                        {
-                                          476.0199890136719: GestureDetector(
-                                              onTap: () {
-                                                _launchInBrowser(Uri.parse(
-                                                    'https://c7116c-dc.myshopify.com/products/young-styled-orange-t-shirt'));
-                                              },
-                                              child: OrientedLayout(
-                                                  orientation: LayoutOrientation
-                                                      .vertical,
-                                                  primaryAxisAlignItems:
-                                                      LayoutAlign.min,
-                                                  counterAxisAlignItems:
-                                                      LayoutAlign.center,
-                                                  diameter: 476.0199890136719,
-                                                  padding: [0, 0, 0, 0],
-                                                  itemSpacing: 66,
-                                                  children: [
-                                                    {
-                                                      635.6599731445312:
-                                                          DecoratedBox(
+                                        (e) => {
+                                          476.0199890136719: OrientedLayout(
+                                              orientation:
+                                                  LayoutOrientation.vertical,
+                                              primaryAxisAlignItems:
+                                                  LayoutAlign.min,
+                                              counterAxisAlignItems:
+                                                  LayoutAlign.center,
+                                              diameter: 476.0199890136719,
+                                              padding: [0, 0, 0, 0],
+                                              itemSpacing: 66,
+                                              children: [
+                                                {
+                                                  635.6599731445312:
+                                                      GestureDetector(
+                                                          onTap: () {
+                                                            _launchInBrowser(
+                                                                Uri.parse(
+                                                                    'https://c7116c-dc.myshopify.com/products/young-styled-orange-t-shirt'));
+                                                          },
+                                                          child: DecoratedBox(
                                                               decoration: BoxDecoration(
                                                                   image: DecorationImage(
                                                                       image: AssetImage(
-                                                                          'assets/sr/Product #0.png'))),
+                                                                          'assets/R76/product #${e + 1}.jpg'))),
                                                               child:
                                                                   OrientedLayout(
                                                                       orientation:
@@ -518,67 +531,65 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                                                                 itemSpacing: 10,
                                                                                 children: [
                                                                                   {
-                                                                                    240: LayoutText('Victrix Pro BFG Wireless Controller', idtext: 'e\ne', style: TextStyle())
+                                                                                    240: LayoutText(productNames[e], idtext: 'e\ne', maxLines: 3, style: GoogleFonts.inter(height: 1.6746987951807228))
                                                                                   }
                                                                                 ]),
                                                                           )
                                                                         }
-                                                                      ]))
-                                                    },
-                                                    {
-                                                      26.34: OrientedLayout(
-                                                        orientation:
-                                                            LayoutOrientation
-                                                                .vertical,
-                                                        primaryAxisAlignItems:
-                                                            LayoutAlign.center,
-                                                        counterAxisAlignItems:
-                                                            LayoutAlign.center,
-                                                        diameter:
-                                                            476.0199890136719,
-                                                        padding: [0, 0, 0, 0],
-                                                        itemSpacing: 10,
-                                                        children: [
-                                                          {
-                                                            26.34:
-                                                                MinDiameterSupport(
-                                                              orientation:
-                                                                  LayoutOrientation
-                                                                      .vertical,
-                                                              length: 26.34,
-                                                              diameter: 91.47,
-                                                              maximumDiameter:
-                                                                  476.0,
-                                                              primaryAxisAlignItems:
-                                                                  LayoutAlign
-                                                                      .center,
-                                                              counterAxisAlignItems:
-                                                                  LayoutAlign
-                                                                      .center,
-                                                              child: DecoratedBox(
-                                                                  decoration: BoxDecoration(
+                                                                      ])))
+                                                },
+                                                {
+                                                  26.34: OrientedLayout(
+                                                    orientation:
+                                                        LayoutOrientation
+                                                            .vertical,
+                                                    primaryAxisAlignItems:
+                                                        LayoutAlign.center,
+                                                    counterAxisAlignItems:
+                                                        LayoutAlign.center,
+                                                    diameter: 476.0199890136719,
+                                                    padding: [0, 0, 0, 0],
+                                                    itemSpacing: 10,
+                                                    children: [
+                                                      {
+                                                        26.34:
+                                                            MinDiameterSupport(
+                                                          orientation:
+                                                              LayoutOrientation
+                                                                  .vertical,
+                                                          length: 26.34,
+                                                          diameter: 190.14,
+                                                          maximumDiameter:
+                                                              476.0,
+                                                          primaryAxisAlignItems:
+                                                              LayoutAlign
+                                                                  .center,
+                                                          counterAxisAlignItems:
+                                                              LayoutAlign
+                                                                  .center,
+                                                          child: DecoratedBox(
+                                                              decoration:
+                                                                  BoxDecoration(
                                                                       color: Color(
                                                                           0xFFD72A47)),
-                                                                  child: LayoutText(
-                                                                      'Buy Now',
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      idtext:
-                                                                          'e',
-                                                                      fontSize:
-                                                                          24,
-                                                                      style: TextStyle(
-                                                                          color: Colors
-                                                                              .white,
-                                                                          height:
-                                                                              1.1640211640211642))),
-                                                            )
-                                                          }
-                                                        ],
-                                                      )
-                                                    }
-                                                  ]))
+                                                              child: LayoutText(
+                                                                  'Agregar al Carrito',
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  idtext: 'e',
+                                                                  fontSize: 24,
+                                                                  style: TextStyle(
+                                                                      color: Colors
+                                                                          .white,
+                                                                      height:
+                                                                          1.1640211640211642))),
+                                                        )
+                                                      }
+                                                    ],
+                                                  )
+                                                }
+                                              ])
                                         },
                                       )),
                                 ]),
@@ -629,15 +640,10 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                       diameter: 728,
                                       padding: [0, 0, 0, 0],
                                       itemSpacing: 10,
-                                      children: List.filled(
+                                      children: List.generate(
                                         10,
-                                        {
-                                          371: Image.asset('assets/sr/Game #0${[
-                                            1,
-                                            2,
-                                            3,
-                                            4
-                                          ][random.nextInt(4)]}.png')
+                                        (e) => {
+                                          371: Image.asset('assets/R76/game #${((e % 4)+1) }.png')
                                         },
                                       ))
                                 ],
