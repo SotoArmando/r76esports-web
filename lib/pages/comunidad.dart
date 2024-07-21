@@ -88,19 +88,19 @@ class Comunidad extends StatelessWidget {
                                           itemSpacing: 37,
                                           children: [
                                             {
-                                              418.7699890136719: Image.asset('assets/sr/Game #01.png')
+                                              418.7699890136719: Image.asset('assets/R76/game #1.png')
                                             },
                                             {
-                                              418.7699890136719: Image.asset('assets/sr/Game #02.png')
+                                              418.7699890136719: Image.asset('assets/R76/game #2.png')
                                             },
                                             {
-                                              418.7699890136719: Image.asset('assets/sr/Game #03.png')
+                                              418.7699890136719: Image.asset('assets/R76/game #3.png')
                                             },
                                             {
-                                              418.7699890136719: Image.asset('assets/sr/Game #04.png')
+                                              418.7699890136719: Image.asset('assets/R76/game #4.png')
                                             },
                                             {
-                                              418.7699890136719: Image.asset('assets/sr/Game #01.png')
+                                              418.7699890136719: Image.asset('assets/R76/game #1.png')
                                             },
                                           ]),)
                                     }

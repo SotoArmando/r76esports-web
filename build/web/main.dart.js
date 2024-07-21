@@ -84098,7 +84098,7 @@ $S:125}
 A.r6.prototype={
 K(a){return A.act(new A.ty(new A.M(1/0,A.bC(a,B.cP,t.w).w.a.a*0.04399789584429248),null),new A.m(4280952873),new A.pg(new A.a_9(),null))}}
 A.a_9.prototype={
-$2(a2,a3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=null,a=1901,a0="assets/sr/Game #01.png",a1=4278190080
+$2(a2,a3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=null,a=1901,a0="assets/R76/game #1.png",a1=4278190080
 if(a3===B.em)return A.lf("portrait",b,b,b)
 else{s=t.a0
 r=A.b([0,0,0,0],s)
@@ -84113,7 +84113,7 @@ k=A.b([0,0,0,0],s)
 j=t.i
 i=t.lu
 h=t.mL
-m=A.w([850.2001342773438,A.b1([A.w([684.3400268554688,A.b1([A.w([558.3400268554688,A.arC(A.b1([A.w([418.7699890136719,A.c0(a0,b)],j,i),A.w([418.7699890136719,A.c0("assets/sr/Game #02.png",b)],j,i),A.w([418.7699890136719,A.c0("assets/sr/Game #03.png",b)],j,i),A.w([418.7699890136719,A.c0("assets/sr/Game #04.png",b)],j,i),A.w([418.7699890136719,A.c0(a0,b)],j,i)],!1,B.m,558.3400268554688,37,0,B.y,k,B.j),B.as)],j,t.lU)],!1,B.j,a,0,0,B.u,l,B.j)],j,h)],!1,B.j,a,0,0,B.u,m,B.j)],j,h)
+m=A.w([850.2001342773438,A.b1([A.w([684.3400268554688,A.b1([A.w([558.3400268554688,A.arC(A.b1([A.w([418.7699890136719,A.c0(a0,b)],j,i),A.w([418.7699890136719,A.c0("assets/R76/game #2.png",b)],j,i),A.w([418.7699890136719,A.c0("assets/R76/game #3.png",b)],j,i),A.w([418.7699890136719,A.c0("assets/R76/game #4.png",b)],j,i),A.w([418.7699890136719,A.c0(a0,b)],j,i)],!1,B.m,558.3400268554688,37,0,B.y,k,B.j),B.as)],j,t.lU)],!1,B.j,a,0,0,B.u,l,B.j)],j,h)],!1,B.j,a,0,0,B.u,m,B.j)],j,h)
 l=A.w([99.5199966430664,new A.bd(new A.m(4292291143),b,b)],j,n)
 k=A.b([0,69,0,2.819999933242798],s)
 g=A.b([0,0,0,0],s)
