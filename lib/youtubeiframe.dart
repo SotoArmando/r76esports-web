@@ -24,11 +24,8 @@ class YTVideo extends StatelessWidget {
           ..src = url
           ..style.border = 'none');
 
-    return SizedBox(
-      height: 500,
-      child: HtmlElementView(
+    return HtmlElementView(
         viewType: viewID,
-      ),
-    );
+      );
   }
 }
