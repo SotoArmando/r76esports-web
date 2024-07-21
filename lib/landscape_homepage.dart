@@ -297,7 +297,7 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                                                                 itemSpacing: 10,
                                                                                 children: [
                                                                                   {
-                                                                                    370: LayoutText(productNames[e], idtext: 'e\ne',maxLines: 3, style: GoogleFonts.inter(height: 1.6746987951807228))
+                                                                                    370: LayoutText(productNames[e], idtext: 'e\ne', maxLines: 3, style: GoogleFonts.inter(height: 1.6746987951807228))
                                                                                   }
                                                                                 ]),
                                                                           )
@@ -643,7 +643,8 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                       children: List.generate(
                                         10,
                                         (e) => {
-                                          371: Image.asset('assets/R76/game #${((e % 4)+1) }.png')
+                                          371: Image.asset(
+                                              'assets/R76/game #${((e % 4) + 1)}.png')
                                         },
                                       ))
                                 ],
@@ -1170,7 +1171,45 @@ class _LandingState extends State<Landing> {
                             'assets/R76/Button - _    _    _      Next.png')))
               },
             ],
-          )
+          ),
+          ProportionsRow(defaultDiameter: 882, padding: [
+            38,
+            0,
+            0,
+            38.3
+          ], children: [
+            {
+              640: MinDiameterSupport(
+                orientation: LayoutOrientation.horizontal,
+                maximumDiameter: 882,
+                counterAxisAlignItems: LayoutAlign.max,
+                length: 500,
+                diameter: 94,
+                child: DecoratedBox(
+                  decoration:
+                      BoxDecoration(color: Colors.black.withOpacity(0.5)),
+                  child: ProportionsColumn(
+                    defaultDiameter: 640,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    padding: [30.21,0,0,0],
+                    children: [
+                      {
+                        54: LayoutText(
+                          'Rainbow 76  Pro LATAM Gaming Team',
+                          idtext: 'e',
+                          style: GoogleFonts.crimsonText(
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                              height: 1.623905825535768),
+                        )
+                      }
+                    ],
+                  ),
+                ),
+              )
+            }
+          ])
         ],
       ),
     );
