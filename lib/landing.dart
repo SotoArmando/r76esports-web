@@ -93,7 +93,14 @@ class _LandingState extends State<Landing> {
       begin: next ? Offset(1, 0) : Offset(-1, 0),
       end: Offset.zero,
     );
-
+    final list = pages
+        .map<Widget>((e) => SizedBox.expand(
+              child: Image.asset(
+                e,
+                fit: BoxFit.cover,
+              ),
+            ))
+        .toList();
     return ColoredBox(
       color: Colors.black,
       child: Stack(
@@ -114,16 +121,11 @@ class _LandingState extends State<Landing> {
             child: SizedBox.expand(
               key: ValueKey(page),
               child: Builder(
-                builder: (c) => Stack(
-                  children: pages
-                      .map<Widget>((e) => SizedBox.expand(
-                            child: Image.asset(
-                              e,
-                              fit: BoxFit.cover,
-                            ),
-                          ))
-                      .toList(),
-                ),
+                builder: (c) {
+                  return Stack(
+                    children: list,
+                  );
+                },
               ),
             ),
           ),
@@ -164,9 +166,7 @@ class _LandingState extends State<Landing> {
               },
             ],
           ),
-          ProportionsRow(
-            length: 1901,
-            defaultDiameter: 882, padding: [
+          ProportionsRow(length: 1901, defaultDiameter: 882, padding: [
             38,
             0,
             0,
@@ -186,7 +186,7 @@ class _LandingState extends State<Landing> {
                     defaultDiameter: 640,
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.end,
-                    padding: [30.21,0,0,0],
+                    padding: [30.21, 0, 0, 0],
                     children: [
                       {
                         54: LayoutText(

@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sr_flutter/button/button1.dart';
 import 'package:sr_flutter/landing.dart';
 import 'package:sr_flutter/scrollanimator.dart';
 import 'package:sr_flutter/setup/layout.dart';
@@ -291,7 +292,8 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                                   LayoutAlign.center,
                                               diameter: 476.0199890136719,
                                               padding: [0, 0, 0, 0],
-                                              itemSpacing: 66,
+                                              // itemSpacing: 0,
+                                              itemSpacing: 20,
                                               children: [
                                                 {
                                                   635.6599731445312: MouseRegion(
@@ -333,69 +335,9 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                                                   ]))))
                                                 },
                                                 {
-                                                  26.34: OrientedLayout(
-                                                    orientation:
-                                                        LayoutOrientation
-                                                            .vertical,
-                                                    primaryAxisAlignItems:
-                                                        LayoutAlign.center,
-                                                    counterAxisAlignItems:
-                                                        LayoutAlign.center,
-                                                    diameter: 476.0199890136719,
-                                                    padding: [0, 0, 0, 0],
-                                                    itemSpacing: 10,
-                                                    children: [
-                                                      {
-                                                        26.34:
-                                                            MinDiameterSupport(
-                                                          orientation:
-                                                              LayoutOrientation
-                                                                  .vertical,
-                                                          length: 26.34,
-                                                          diameter: 150,
-                                                          maximumDiameter:
-                                                              476.0,
-                                                          primaryAxisAlignItems:
-                                                              LayoutAlign
-                                                                  .center,
-                                                          counterAxisAlignItems:
-                                                              LayoutAlign
-                                                                  .center,
-                                                          child: MouseRegion(
-                                                      cursor: SystemMouseCursors.click,
-                                                      child: GestureDetector(
-                                                          onTap: () {
-                                                            _launchInBrowser(
-                                                                Uri.parse(
-                                                                    'https://c7116c-dc.myshopify.com/products/young-styled-orange-t-shirt'));
-                                                          },
-                                                          child:DecoratedBox(
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                      color: Color(
-                                                                          0xFFD72A47)),
-                                                              child: Center(
-                                                                child: LayoutText(
-                                                                    'Agregar al Carrito',
-                                                                    postScale:
-                                                                        0.74,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    idtext: 'e',
-                                                                    fontSize:
-                                                                        24,
-                                                                    style: GoogleFonts.inter(
-                                                                        color: Colors
-                                                                            .white,
-                                                                        height:
-                                                                            1.1640211640211642)),
-                                                           ))     )),
-                                                        )
-                                                      }
-                                                    ],
-                                                  )
-                                                }
+                                                  45: Button1()
+                                                  }
+                                              
                                               ])
                                         },
                                       ).reversed.toList()),
@@ -522,7 +464,8 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                                   LayoutAlign.center,
                                               diameter: 476.0199890136719,
                                               padding: [0, 0, 0, 0],
-                                              itemSpacing: 66,
+                                              itemSpacing: 20,
+                                              // itemSpacing: 66,
                                               children: [
                                                 {
                                                   635.6599731445312: MouseRegion(
@@ -564,69 +507,8 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                                                                   ]))))
                                                 },
                                                 {
-                                                  26.34: OrientedLayout(
-                                                    orientation:
-                                                        LayoutOrientation
-                                                            .vertical,
-                                                    primaryAxisAlignItems:
-                                                        LayoutAlign.center,
-                                                    counterAxisAlignItems:
-                                                        LayoutAlign.center,
-                                                    diameter: 476.0199890136719,
-                                                    padding: [0, 0, 0, 0],
-                                                    itemSpacing: 10,
-                                                    children: [
-                                                      {
-                                                        26.34:
-                                                            MinDiameterSupport(
-                                                          orientation:
-                                                              LayoutOrientation
-                                                                  .vertical,
-                                                          length: 26.34,
-                                                          diameter: 150,
-                                                          maximumDiameter:
-                                                              476.0,
-                                                          primaryAxisAlignItems:
-                                                              LayoutAlign
-                                                                  .center,
-                                                          counterAxisAlignItems:
-                                                              LayoutAlign
-                                                                  .center,
-                                                          child: MouseRegion(
-                                                      cursor: SystemMouseCursors.click,
-                                                      child: GestureDetector(
-                                                          onTap: () {
-                                                            _launchInBrowser(
-                                                                Uri.parse(
-                                                                    'https://c7116c-dc.myshopify.com/products/young-styled-orange-t-shirt'));
-                                                          },
-                                                          child:DecoratedBox(
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                      color: Color(
-                                                                          0xFFD72A47)),
-                                                              child: Center(
-                                                                child: LayoutText(
-                                                                    'Agregar al Carrito',
-                                                                    postScale:
-                                                                        0.74,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    idtext: 'e',
-                                                                    fontSize:
-                                                                        24,
-                                                                    style: GoogleFonts.inter(
-                                                                        color: Colors
-                                                                            .white,
-                                                                        height:
-                                                                            1.1640211640211642)),
-                                                              ))),
-                                                        ))
-                                                      }
-                                                    ],
-                                                  )
-                                                }
+                                                  45:Button1() }
+                                              
                                               ])
                                         },
                                       )),
