@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// import 'dart:html' as html;
+import 'dart:html' as html;
 // import 'dart:js' as js;
 import 'dart:ui' as ui;
 
@@ -16,13 +16,13 @@ class YTVideo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: undefined_prefixed_name
-    // ui.platformViewRegistry.registerViewFactory(
-    //     viewID,
-    //     (int id) => html.IFrameElement()
-    //       ..width = MediaQuery.of(context).size.width.toString()
-    //       ..height = MediaQuery.of(context).size.height.toString()
-    //       ..src = url
-    //       ..style.border = 'none');
+    ui.platformViewRegistry.registerViewFactory(
+        viewID,
+        (int id) => html.IFrameElement()
+          ..width = MediaQuery.of(context).size.width.toString()
+          ..height = MediaQuery.of(context).size.height.toString()
+          ..src = url
+          ..style.border = 'none');
 
     return SizedBox(
       height: 500,
