@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sr_flutter/landing.dart';
+import 'package:sr_flutter/scrollanimator.dart';
 import 'package:sr_flutter/setup/layout.dart';
 import 'package:sr_flutter/setup/layout_text.dart';
 import 'package:textwrap/textwrap.dart';
@@ -14,6 +15,24 @@ import 'package:url_launcher/url_launcher.dart';
 Random random = new Random();
 
 class _LandscapeHomepageState extends State<LandscapeHomepage> {
+
+    // Controllers
+  late ScrollController _scrollController;
+
+  @override
+  void initState() {
+    // initialize scroll controllers
+    _scrollController = ScrollController();
+
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   List<String> productNames = [
     "Funny League Shirt",
     "League Players Top Diff Legends",
@@ -63,8 +82,12 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
     
     return ColoredBox(
       color: Color(0xFFFFFFFF),
-      child: ListView(
+      child: ScrollAnimator(
+  controller: _scrollController, // or null
+  builder: (context, controller, phyiscs) => ListView(
           // itemExtent: 1000,
+          controller: controller,
+          physics: phyiscs,
           children: [
             OrientedLayout(
                 orientation: LayoutOrientation.vertical,
@@ -1042,7 +1065,7 @@ class _LandscapeHomepageState extends State<LandscapeHomepage> {
                   }
                 ]),
           ]),
-    );
+    ));
   }
 }
 

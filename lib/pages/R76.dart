@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sr_flutter/pages/home.dart';
 import 'package:sr_flutter/r76_appbar.dart';
+import 'package:sr_flutter/scrollanimator.dart';
 import 'package:sr_flutter/setup/layout.dart';
 import 'package:sr_flutter/setup/layout_text.dart';
 import 'package:sr_flutter/youtubeiframe.dart';
@@ -15,7 +16,7 @@ class R76 extends StatefulWidget {
 
 class _R76State extends State<R76> {
   bool hide = false;
-
+  late ScrollController _scrollController;
   void prepareForRoute() {
     setState(() {
       hide = true;
@@ -42,8 +43,13 @@ class _R76State extends State<R76> {
           if (orientation == Orientation.portrait) {
             return Text('portrait');
           } else {
-            return SingleChildScrollView(
-              child: OrientedLayout(
+            return ScrollAnimator(
+                      controller: _scrollController, // or null
+                      builder: (context, controller, phyiscs) => ListView(
+                              // itemExtent: 1000,
+                              controller: controller,
+                              physics: phyiscs,
+                              children:  [OrientedLayout(
                   orientation: LayoutOrientation.vertical,
                   primaryAxisAlignItems: LayoutAlign.min,
                   counterAxisAlignItems: LayoutAlign.min,
@@ -545,7 +551,7 @@ class _R76State extends State<R76> {
                               ]))
                     }
                   ]),
-            );
+           ] ));
           }
         },
       ),
