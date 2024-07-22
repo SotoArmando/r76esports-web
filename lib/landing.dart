@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sr_flutter/setup/layout.dart';
@@ -18,10 +19,10 @@ class _LandingState extends State<Landing> {
   bool loading = true;
 
   List<String> pages = [
-    "assets/R76/pexels-rdne-7915280.jpg",
-    "assets/R76/pexels-rdne-7915285.jpg",
-    "assets/R76/pexels-rdne-7915289.jpg",
-    "assets/R76/pexels-rdne-7915364.jpg"
+    'https://images.pexels.com/photos/7915245/pexels-photo-7915245.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    "https://images.pexels.com/photos/7915285/pexels-photo-7915285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/7915289/pexels-photo-7915289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/7915280/pexels-photo-7915280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   ];
 
   List<T> shiftList<T>(List<T> list, {required bool forward}) {
@@ -90,25 +91,28 @@ class _LandingState extends State<Landing> {
     // }
 
     final _offsetAnimation = Tween<Offset>(
-      begin: next ? Offset(1, 0) : Offset(-1, 0),
+      begin: next ? const Offset(1, 0) : const Offset(-1, 0),
       end: Offset.zero,
     );
     final list = pages
         .map<Widget>((e) => SizedBox.expand(
-              child: Image.asset(
-                e,
+              child: CachedNetworkImage(
+                imageUrl: e,
+                placeholder: (context, url) => const ColoredBox(color: Colors.black, child: Center(child: CircularProgressIndicator(),),),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
                 fit: BoxFit.cover,
               ),
             ))
         .toList();
+
     return ColoredBox(
       color: Colors.black,
       child: Stack(
         fit: StackFit.expand,
         children: [
           AnimatedSwitcher(
-            duration: Duration(milliseconds: 500),
-            reverseDuration: Duration(milliseconds: 150),
+            duration: const Duration(milliseconds: 500),
+            reverseDuration: const Duration(milliseconds: 150),
             switchInCurve: Curves.easeOutExpo,
             switchOutCurve: Curves.easeOut,
             transitionBuilder: (child, animation) {

@@ -44,6 +44,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     double width = MediaQuery.sizeOf(context).width;
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      extendBody: true,
       appBar: R76Appbar(
         width: width,
         preferredSize: Size.fromHeight(width * 0.04399789584429248),
